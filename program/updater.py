@@ -39,7 +39,7 @@ def updater():
         repo = Repo()
     except InvalidGitRepositoryError:
         repo = Repo.init()
-        origin = repo.create_remote("upstream", "UPSTREAM_REPO")
+        origin = repo.create_remote("upstream", UPSTREAM_REPO)
         origin.fetch()
         repo.create_head("main", origin.refs.main)
         repo.heads.main.set_tracking_branch(origin.refs.main)
@@ -48,7 +48,7 @@ def updater():
     if "upstream" in repo.remotes:
         ups_rem = repo.remote("upstream")
     else:
-        ups_rem = repo.create_remote("upstream", "UPSTREAM_REPO")
+        ups_rem = repo.create_remote("upstream", UPSTREAM_REPO)
     ups_rem.fetch(ac_br)
     changelog, tl_chnglog = gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     return bool(changelog)
