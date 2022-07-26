@@ -41,11 +41,7 @@ async def ytdl(format: str, link: str):
 
 @Client.on_message(command(["تشغيل","شغل","play","/play","ش", f"/play@{BOT_USERNAME}"]) & other_filters)
 async def play(c: Client, m: Message):
-    await m.delete()
-    do = requests.get(f"https://api.telegram.org/bot{BOT_TOKEN}/getChatMember?chat_id=@{UPDATES_CHANNEL}&user_id={m.from_user.id}").text
-    if do.count("left") or do.count("Bad Request: user not found"):
-        await m.reply_text(f" ** ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉**\n@{UPDATES_CHANNEL}\n» **اشتࢪك بقناة البوت لتستطيع تشغيل الاغاني**")
-    else:
+    
         replied = m.reply_to_message
         chat_id = m.chat.id
         keyboard = InlineKeyboardMarkup(
@@ -65,17 +61,12 @@ async def play(c: Client, m: Message):
         a = await c.get_chat_member(chat_id, aing.id)
         if a.status != "administrator":
             await m.reply_text(
-                f"💡 لاستخدامي ، أحتاج إلى أن أكون ** مسؤول ** مع الأذونات ** التالية**:\n\n» ❌ __حذف الرسائل__\n» ❌__إضافة مستخدمين__\n» ❌ __إدارة دردشة الفيديو__\n\nيتم تحديث البيانات ** تلقائيًا بعد ترقيتك ****"
+                f"💡 لاستخدامي ، أحتاج إلى أن أكون ** مسؤول ** مع الأذونات ** التالية**:\n\n» ❌__إضافة مستخدمين__\n» ❌ __إدارة دردشة الفيديو__\n\nيتم تحديث البيانات ** تلقائيًا بعد ترقيتك ****"
             )
             return
         if not a.can_manage_voice_chats:
             await m.reply_text(
                 "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِد:" + "\n\n» ❌ __إدارة دردشة الفيديو__"
-            )
-            return
-        if not a.can_delete_messages:
-            await m.reply_text(
-                "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِ:" + "\n\n» ❌ __حذف الرسائل__"
             )
             return
         if not a.can_invite_users:
