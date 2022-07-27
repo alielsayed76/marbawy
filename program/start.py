@@ -95,29 +95,6 @@ async def start_(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["مبرمج السورس", f"ورس", f"السورس"]) & filters.group & ~filters.edited)
-async def start(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/68d5c1ba31d73ced616d1.jpg",
-        caption=f"""Programmer [ARBAWY](https://t.me/SOURCE_ARBAWY305) 𖡼\nᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ 𖡼\nғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ 𖡼""",
-        reply_markup=InlineKeyboardMarkup(
-         [
-            [
-                InlineKeyboardButton("℡ ᯓ 𝐴𝑅𝐵𝐴𝑊𝑌™ عرباوي", url=f"https://t.me/SOURCE_ARBAWY305"),
-            ],
-            [
-                InlineKeyboardButton(
-                    "-علي.", url=f"https://t.me/EL_RAYEQ"
-                ),
-            ],
-            [
-                InlineKeyboardButton("♡اضف البوت الى مجموعتك♡", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
-            ]
-         ]
-     )
-  )
-
-
 @Client.on_message(command(["جلب التوكن", f"لب_التوكن", "hadow"]) & filters.private & ~filters.edited)
 @sudo_users_only
 async def shadow(c: Client, message: Message):
@@ -126,7 +103,7 @@ async def shadow(c: Client, message: Message):
     BOT_TOKEN = time() - start
     await m_reply.edit_text(f"**تم جلب التوكن**\n`{BOT_TOKEN}`")
 
-@Client.on_message(command(["/ping", f"بنك"]) & ~filters.edited)
+@Client.on_message(command(["/ping", f"بينج"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("pinging...")
