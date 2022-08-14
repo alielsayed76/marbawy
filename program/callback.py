@@ -175,7 +175,7 @@ async def cbmenu(_, query: CallbackQuery):
     chat = query.message.chat.title
     if chat_id in QUEUE:
           await query.edit_message_text(
-              f"⚙️ **الإعدادات** {query.message.chat.title}\n\n⏸ايقاف التشغيل موقتآ\n▶️استئناف التشغيل\n🔇كتم الصوت\n🔊الغاء كتم الصوت\n⏹ايقاف التشغيل",
+              f"⚙️ **الإعدادات** {query.message.chat.title}\n\n⏸ : ايقاف التشغيل موقتآ\n▶️ : استئناف التشغيل\n🔇 : كتم الصوت\n🔊 : الغاء كتم الصوت\n⏹ : ايقاف التشغيل",
               reply_markup=InlineKeyboardMarkup(buttons),
           )
     else:
