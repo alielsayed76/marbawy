@@ -54,6 +54,12 @@ async def play(c: Client, m: Message):
                     InlineKeyboardButton(text="• علي", url=f"https://t.me/EL_RAYEQ"),
                     InlineKeyboardButton(text="•حسن", url=f"https://t.me/Dev_Arbawy"),
                 ],
+                  [
+                    InlineKeyboardButton(
+                        "ضيـف البـوت لمجمـوعتـك ✅",
+                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                    )
+                ],
                 [
                     InlineKeyboardButton(text="•اخفاء", callback_data="cls"),
                 ]
@@ -261,3 +267,35 @@ async def play(c: Client, m: Message):
                             except Exception as ep:
                                 await suhu.delete()
                                 await m.reply_text(f"🚫تأكد ان المكالمة مفتوحه`{ep}`")
+                                
+                                
+          
+@Client.on_callback_query(filters.regex("cplaym"))
+async def cbstart(_, query: CallbackQuery):
+    await query.answer("الصفحه الرئيسيه")
+    await query.edit_message_text(
+        "🏷 **-› الاسم:** [{songname}]({url})\n**⏱ المده:** `{duration}`\n💡 ** الحالة:** `يشغل`\n🎧 **-› مطلوبه من:** {requester}\n📹 ** نوع البث:** `موسيقى`",
+                                 
+             reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(text="• التحكم", callback_data="cbmenu"),
+                    InlineKeyboardButton(text="•السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                ],
+                [
+                    InlineKeyboardButton(text="• علي", url=f"https://t.me/EL_RAYEQ"),
+                    InlineKeyboardButton(text="•حسن", url=f"https://t.me/Dev_Arbawy"),
+                ],
+                [
+                    InlineKeyboardButton(
+                        "ضيـف البـوت لمجمـوعتـك ✅",
+                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(text="•اخفاء", callback_data="cls"),
+                ],
+                
+            ]
+        ),
+    )
