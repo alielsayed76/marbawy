@@ -35,7 +35,7 @@ def menu_markup(user_id):
       InlineKeyboardButton(text="🔊 الغاء الكتم", callback_data=f'cbunmute | {user_id}'),
     ],
     [
-      InlineKeyboardButton(text="•رجوع", callback_data="cplaym"),
+      InlineKeyboardButton(text="•اخفاء", callback_data="cls"),
     ]
   ]
   return buttons
