@@ -274,7 +274,9 @@ async def play(c: Client, m: Message):
 @Client.on_callback_query(filters.regex("cplaym"))
 async def cbstart(_, query: CallbackQuery):
     await query.answer("الصفحه الرئيسيه")
-    songname = search[0]
+                    query = m.text.split(None, 1)[1]
+                    search = ytsearch(query)
+                    songname = search[0]
                     url = search[1]
                     duration = search[2]
                     thumbnail = search[3]
