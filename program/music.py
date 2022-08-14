@@ -271,41 +271,4 @@ async def play(c: Client, m: Message):
                                 
                                 
           
-@Client.on_callback_query(filters.regex("cplaym"))
-async def cplaym(_, query: CallbackQuery):
-    await query.answer("الصفحه الرئيسيه")
-                    search = ytsearch
-                    songname = search[0]
-                    url = search[1]
-                    duration = search[2]
-                    thumbnail = search[3]
-                    format = "bestaudio[ext=m4a]"
-                    veez, ytlink = await ytdl(format, url)
-                    requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
-                    add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
-    await query.edit_message_text(
-        "🏷 **-› الاسم:** [{songname}]({url})\n**⏱ المده:** `{duration}`\n💡 ** الحالة:** `يشغل`\n🎧 **-› مطلوبه من:** {requester}\n📹 ** نوع البث:** `موسيقى`",
-                                 
-             reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(text="• التحكم", callback_data="cbmenu"),
-                    InlineKeyboardButton(text="•السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                ],
-                [
-                    InlineKeyboardButton(text="• علي", url=f"https://t.me/EL_RAYEQ"),
-                    InlineKeyboardButton(text="•حسن", url=f"https://t.me/Dev_Arbawy"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "ضيـف البـوت لمجمـوعتـك ✅",
-                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(text="•اخفاء", callback_data="cls"),
-                ],
-                
-            ]
-        ),
-    )
+
