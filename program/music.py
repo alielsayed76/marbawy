@@ -274,6 +274,16 @@ async def play(c: Client, m: Message):
 @Client.on_callback_query(filters.regex("cplaym"))
 async def cbstart(_, query: CallbackQuery):
     await query.answer("الصفحه الرئيسيه")
+    songname = search[0]
+                    url = search[1]
+                    duration = search[2]
+                    thumbnail = search[3]
+                    format = "bestaudio[ext=m4a]"
+                    veez, ytlink = await ytdl(format, url)
+                    requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
+                    else:
+                        if chat_id in QUEUE:
+                            pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
     await query.edit_message_text(
         "🏷 **-› الاسم:** [{songname}]({url})\n**⏱ المده:** `{duration}`\n💡 ** الحالة:** `يشغل`\n🎧 **-› مطلوبه من:** {requester}\n📹 ** نوع البث:** `موسيقى`",
                                  
