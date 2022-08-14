@@ -194,7 +194,7 @@ async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
         "🏷 **-› الاسم:** [{songname}]({url})\n**⏱ المده:** `{duration}`\n💡 ** الحالة:** `يشغل`\n🎧 **-› مطلوبه من:** {requester}\n📹 ** نوع البث:** `موسيقى`",
                                  
-                                )reply_markup=InlineKeyboardMarkup(
+             reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(text="• التحكم", callback_data="cbmenu"),
