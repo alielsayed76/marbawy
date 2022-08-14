@@ -47,8 +47,11 @@ async def play(c: Client, m: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="• القائمه", callback_data="cbmenu"),
-                    InlineKeyboardButton(text="•اغلاق", callback_data="cls"),
+                    InlineKeyboardButton(text="• التحكم", callback_data="cbmenu"),
+                    InlineKeyboardButton(text="•السورس", url=f"https://t.me/{UBDATES_CHANNEL}"),
+                ]
+                [
+                    InlineKeyboardButton(text="•اخفاء", callback_data="cls"),
                 ]
             ]
         )
@@ -77,7 +80,7 @@ async def play(c: Client, m: Message):
             b = await c.get_chat_member(chat_id, ubot)
             if b.status == "kicked":
                 await m.reply_text(
-                    f"@{ASSISTANT_NAME} **ﻣ̝حّـظَّوٌر فّـې ﺂ̣̐ﻟ̣̣ﻣ̝جّـﻣ̝وٌﻋ̝̚ة** {m.chat.title}\n\n» **قِمَ بِفِّګ حٌظّڒٍ أّلَمَ ستّخَدِمَ أوِلَأًّ إوِ تّأّګدِ مَنِ تّقِيِّدِ حٌ سأّبِ أّلَمَ سأّعٌد.**"
+                    f"@{ASSISTANT_NAME} **محظور في المجموعه** {m.chat.title}\n\n» **قم بفك حظر الحساب المساعد.**"
                 )
                 return
         except UserNotParticipant:
@@ -85,7 +88,7 @@ async def play(c: Client, m: Message):
                 try:
                     await user.join_chat(m.chat.username)
                 except Exception as e:
-                    await m.reply_text(f"❌ **فِّشٍلَ فِّيِّ أّلَأّنِضّمَأّمَ𖠉**\n\n**السبب**: `{e}`")
+                    await m.reply_text(f"❌ **فشل في الانضمام **\n\n**بسبب**: `{e}`")
                     return
             else:
                 try:
@@ -105,7 +108,7 @@ async def play(c: Client, m: Message):
                     )
         if replied:
             if replied.audio or replied.voice:
-                suhu = await replied.reply("**اެبشࢪ ثواެني بس اެبحث 🌵.**")
+                suhu = await replied.reply("**ثواني 🌵.**")
                 dl = await replied.download()
                 link = replied.link
                 if replied.audio:
@@ -123,7 +126,7 @@ async def play(c: Client, m: Message):
                     await suhu.delete()
                     await m.reply_photo(
                         photo=f"{IMG_1}",
-                        caption=f"💡 ***-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ** `{pos}`\n\n🏷 **-› اެݪاެسم:** [{songname}]({link})| موسيقى`\n💭**-› اެيدي اެݪمحاެدثةه:** `{chat_id}`\n🎧 **-› طݪب اެݪحݪۅٛ:** {m.from_user.mention()}",
+                        caption=f"💡 ***-› تم الاضافه لقائمة الانتظار** `{pos}`\n\n🏷 **-› اެݪاެسم:** [{songname}]({link})| موسيقى`\n💭**-› اެيدي اެݪمحاެدثةه:** `{chat_id}`\n🎧 **-› طݪب اެݪحݪۅٛ:** {m.from_user.mention()}",
                         reply_markup=keyboard,
                     )
                 else:
@@ -150,14 +153,14 @@ async def play(c: Client, m: Message):
             else:
                 if len(m.command) < 2:
                     await m.reply(
-                        "»قِمَ بِأّلَڒٍدِ عٌ  مَلَفِّ صٌوِتّيِّ  أوِ  أګتّبِ شٍيِّئًأّ لَلَبِحٌثّ**"
+                        "»قم بالرد علي ملف صوتي او اكتب شيئا للبحث**"
                     )
                 else:
-                    suhu = await c.send_message(chat_id, "🔍**جِأّڒٍيِّ أّلَبِحٌثّ...**")
+                    suhu = await c.send_message(chat_id, "🔍**جار البحث...**")
                     query = m.text.split(None, 1)[1]
                     search = ytsearch(query)
                     if search == 0:
-                        await suhu.edit("❌ **لَمَ يِّتّمَ أّلَعٌثّوِڒٍ عٌلَىّ نِتّأّئجِ.**")
+                        await suhu.edit("❌ **لم يتم العثور علي نتائج.**")
                     else:
                         songname = search[0]
                         url = search[1]
@@ -181,7 +184,7 @@ async def play(c: Client, m: Message):
                                 )
                             else:
                                 try:
-                                    await suhu.edit("🔄 ** يِّمَ أّلَأّنِضّمَأّمَ لَلَمَګأّلَمَهِ وِأّلَتّشٍغٌيِّلَ...**")
+                                    await suhu.edit("🔄 ** تم الانضمام للمكالمة والتشغيل...**")
                                     await call_py.join_group_call(
                                         chat_id,
                                         AudioPiped(
