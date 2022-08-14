@@ -51,6 +51,10 @@ async def play(c: Client, m: Message):
                     InlineKeyboardButton(text="•السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
                 ],
                 [
+                    InlineKeyboardButton(text="• علي", url=f"https://t.me/EL_RAYEQ"),
+                    InlineKeyboardButton(text="•حسن", url=f"https://t.me/Dev_Arbawy"),
+                ],
+                [
                     InlineKeyboardButton(text="•اخفاء", callback_data="cls"),
                 ]
             ]
@@ -210,11 +214,11 @@ async def play(c: Client, m: Message):
                     "» أّلَڒٍدِ عٌلَىّ ** مَلَفِّ صٌوِتّيِّ  ** أو ** أعٌطّ شٍيِّئًأّ لَلَبِحٌثّ.**"
                 )
             else:
-                suhu = await c.send_message(chat_id, "🔍**يِّبِحٌثّ...**")
+                suhu = await c.send_message(chat_id, "🔍**جار البحث...**")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
-                    await suhu.edit("❌ **لَمَ يِّتّمَ أّلَعٌثّوِڒٍ عٌلَىّ نِتّأّئجِ.**")
+                    await suhu.edit("❌ **لم يتم العثور علي نتائج.**")
                 else:
                     songname = search[0]
                     url = search[1]
@@ -238,7 +242,7 @@ async def play(c: Client, m: Message):
                             )
                         else:
                             try:
-                                await suhu.edit("🔄 **ﻟ̣̣ﺂ̣̐نّضّـﻣ̝ﺂ̣̐ﻣ̝ إﻟ̣̣ى ﺂ̣̐ﻟ̣̣ﻣ̝ﮗﺂ̣̐ﻟ̣̣ﻣ̝ﮪ...**")
+                                await suhu.edit("🔄 **الانضمام للمكالمه والتشغيل...**")
                                 await call_py.join_group_call(
                                     chat_id,
                                     AudioPiped(
@@ -251,9 +255,9 @@ async def play(c: Client, m: Message):
                                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                                 await m.reply_photo(
                                     photo=thumbnail,
-                                    caption=f"🏷 **-› اެݪاެسم:** [{songname}]({url})\n**⏱ أّلَمَدِ ةّ𖠈:** `{duration}`\n💡 ** الحالة:** `يشغل`\n🎧 **-› طݪب اެݪحݪۅٛ:** {requester}\n📹 ** نِوِعٌ أّلَبِثّ:** `موسيقى`",
+                                    caption=f"🏷 **-› الاسم:** [{songname}]({url})\n**⏱ المده:** `{duration}`\n💡 ** الحالة:** `يشغل`\n🎧 **-› مطلوبه من:** {requester}\n📹 ** نو البث:** `موسيقى`",
                                     reply_markup=keyboard,
                                 )
                             except Exception as ep:
                                 await suhu.delete()
-                                await m.reply_text(f"🚫حّـدّثّـ خـّطِّأ تٌئﮗدّ ﻣ̝نّ ﺂ̣̐ﻟ̣̣ﻣ̝ﮗﺂ̣̐ﻟ̣̣ﻣ̝ﮪ ﻣ̝فّـتٌوٌحّـﮪ  ﺂ̣̐وٌﻟ̣̣آ`{ep}`")
+                                await m.reply_text(f"🚫تأكد ان المكالمة مفتوحه`{ep}`")
