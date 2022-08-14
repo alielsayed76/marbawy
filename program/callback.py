@@ -175,7 +175,7 @@ async def cbmenu(_, query: CallbackQuery):
     chat = query.message.chat.title
     if chat_id in QUEUE:
           await query.edit_message_text(
-              f"⚙️ **الإعدادات** {query.message.chat.title}\n\n⏸ : ايقاف التشغيل موقتآ\n▶️ : استئناف التشغيل\n🔇 : كتم الصوت\n🔊 : الغاء كتم الصوت\n⏹ : ايقاف التشغيل",
+              f"⚙️ **الإعدادات** {query.message.chat.title}\n\n⏸ايقاف التشغيل موقتآ\n▶️استئناف التشغيل\n🔇كتم الصوت\n🔊الغاء كتم الصوت\n⏹ايقاف التشغيل",
               reply_markup=InlineKeyboardMarkup(buttons),
           )
     else:
@@ -185,6 +185,36 @@ async def cbmenu(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cls"))
 async def close(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
-    if not a.can_manage_voice_chats:
-        return await query.answer("💡 المسؤول الوحيد الذي لديه إذن إدارة الدردشات الصوتية يمكنه النقر على هذا الزر !", show_alert=True)
     await query.message.delete()
+    
+
+@Client.on_callback_query(filters.regex("cplaym"))
+async def cbstart(_, query: CallbackQuery):
+    await query.answer("الصفحه الرئيسيه")
+    await query.edit_message_text(
+        "🏷 **-› الاسم:** [{songname}]({url})\n**⏱ المده:** `{duration}`\n💡 ** الحالة:** `يشغل`\n🎧 **-› مطلوبه من:** {requester}\n📹 ** نوع البث:** `موسيقى`",
+                                 
+                                )reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(text="• التحكم", callback_data="cbmenu"),
+                    InlineKeyboardButton(text="•السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                ],
+                [
+                    InlineKeyboardButton(text="• علي", url=f"https://t.me/EL_RAYEQ"),
+                    InlineKeyboardButton(text="•حسن", url=f"https://t.me/Dev_Arbawy"),
+                ],
+                [
+                    InlineKeyboardButton(
+                        "ضيـف البـوت لمجمـوعتـك ✅",
+                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(text="•اخفاء", callback_data="cls"),
+                ],
+                
+            ]
+        ),
+        disable_web_page_preview=True,
+    )
