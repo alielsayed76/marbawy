@@ -60,9 +60,6 @@ async def play(c: Client, m: Message):
                         "ضيـف البـوت لمجمـوعتـك ✅",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
-                ],
-                [
-                    InlineKeyboardButton(text="•اخفاء", callback_data="cls"),
                 ]
             ]
         )
