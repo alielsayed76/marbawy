@@ -268,17 +268,3 @@ async def play(c: Client, m: Message):
                                 
                                 
 
-@Client.on_message(command(["بوت","play","/play", f"/play@{BOT_USERNAME}"]) & other_filters)
-async def bot(c: Client, m: Message):
-    await m.reply(
-        f"قلب البوت",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(text={BOT_NAME}, url=f"https://t.me/{BOT_USERNAME}"),
-                    InlineKeyboardButton(text="•السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                ]
-            ]
-        )
-    
- 
