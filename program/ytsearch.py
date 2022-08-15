@@ -26,6 +26,6 @@ async def ytsearch(_, message: Message):
         text,
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🗑 اغلاق", callback_data="cls")]]
+            [[InlineKeyboardButton("اخفاء", callback_data="cls")]]
         ),
     )
