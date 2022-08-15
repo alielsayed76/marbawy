@@ -5,7 +5,7 @@
 import re
 import asyncio
 import requests
-from config import ASSISTANT_NAME, BOT_TOKEN, BOT_USERNAME, UPDATES_CHANNEL, IMG_1, IMG_2
+from config import ASSISTANT_NAME, BOT_TOKEN, BOT_USERNAME, UPDATES_CHANNEL, IMG_1, IMG_2, BOT_NAME
 from driver.filters import command, other_filters
 from driver.queues import QUEUE, add_to_queue
 from driver.veez import call_py, user
@@ -267,5 +267,18 @@ async def play(c: Client, m: Message):
                                 await m.reply_text(f"🚫تأكد ان المكالمة مفتوحه`{ep}`")
                                 
                                 
-          
 
+@Client.on_message(command(["بوت","play","/play", f"/play@{BOT_USERNAME}"]) & other_filters)
+async def bot(c: Client, m: Message):
+    await m.reply(
+        f"قلب البوت",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(text={BOT_NAME}, url=f"https://t.me/{BOT_USERNAME}"),
+                    InlineKeyboardButton(text="•السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                ]
+            ]
+        )
+    
+ 
