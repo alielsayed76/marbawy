@@ -6,7 +6,7 @@ load_dotenv()
 admins = {}
 SESSION_NAME = getenv("SESSION_NAME", "session")
 BOT_TOKEN = getenv("BOT_TOKEN")
-BOT_NAME = getenv("BOT_NAME", "عرباوي")
+BOT_NAME = getenv("BOT_NAME", "Arbawy")
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
 MONGODB_URL = getenv("mongodb+srv://lucifer:ASShaw96@lucifer.vuows.mongodb.net/lucifer?retryWrites=true&w=majorityL")
