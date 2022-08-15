@@ -80,6 +80,11 @@ async def play(c: Client, m: Message):
                 "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِد:" + "\n\n» ❌ __إدارة دردشة الفيديو__"
             )
             return
+         if not a.can_delete_messages:
+            await m.reply_text(
+                "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِ:" + "\n\n» ❌ __حذف الرسائل__"
+            )
+            return
         if not a.can_invite_users:
             await m.reply_text("أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِ:" + "\n\n» ❌__إضافة مستخدمين__")
             return
