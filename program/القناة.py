@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from driver.filters import command2
+from driver.filters import command
 from driver.decorators import authorized_users_only
 from driver.veez import user as USER
 from pyrogram.errors import UserAlreadyParticipant
@@ -9,7 +9,7 @@ from pyrogram.types import (
 )
 from config import UPDATES_CHANNEL, SUBSCRIBE
 
-@Client.on_message(command2(["القناة المرتبطه"]) & ~filters.private & ~filters.bot)
+@Client.on_message(command(["القناة المرتبطه"]) & ~filters.private & ~filters.bot)
 @authorized_users_only
 async def ch_id(client, message):
     if SUBSCRIBE == "y":
@@ -45,7 +45,7 @@ async def ch_id(client, message):
 الايدي : {getch.id}"""
     await message.reply_text(text)
 
-@Client.on_message(command2(["القناة انضم"]) & ~filters.private & ~filters.bot)
+@Client.on_message(command(["القناة انضم"]) & ~filters.private & ~filters.bot)
 @authorized_users_only
 async def ch_join(client, message):
     if SUBSCRIBE == "y":
