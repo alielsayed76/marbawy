@@ -15,7 +15,8 @@ from driver.decorators import authorized_users_only, sudo_users_only
 async def join_chat(c: Client, m: Message):
     chat_id = m.chat.id
     try:
-        invitelink = await c.export_chat_invite_link(chat_id)
+        invitelink = await c.export_chat_invite_link(
+            m.chat.id)
         if invitelink.startswith("https://t.me/+"):
             invitelink = invitelink.replace(
                 "https://t.me/+", "https://t.me/joinchat/"
