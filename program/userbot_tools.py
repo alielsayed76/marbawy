@@ -15,8 +15,7 @@ from driver.decorators import authorized_users_only, sudo_users_only
 async def join_chat(c: Client, m: Message):
     chat_id = m.chat.id
     try:
-        invitelink = await c.export_chat_invite_link(
-            m.chat.id)
+        invitelink = await c.export_chat_invite_link(chat_id)
         if invitelink.startswith("https://t.me/+"):
             invitelink = invitelink.replace(
                 "https://t.me/+", "https://t.me/joinchat/"
@@ -55,23 +54,23 @@ async def leave_all(client, message):
     left = 0
     failed = 0
     
-    msg = await message.reply("🔄 Userbot leaving all Group !")
+    msg = await message.reply("🔄 جار مغادرة جميع المجموعات ....)
     async for dialog in user.iter_dialogs():
         try:
             await user.leave_chat(dialog.chat.id)
             left += 1
             await msg.edit(
-                f"Userbot leaving all Group...\n\nLeft: {left} chats.\nFailed: {failed} chats."
+                f"جار المغادرة..\n\nتم المغادرة من: {left} مجموعه.\nفشل المغادرة من: {failed} مجموعه."
             )
         except BaseException:
             failed += 1
             await msg.edit(
-                f"Userbot leaving...\n\nLeft: {left} chats.\nFailed: {failed} chats."
+                f"جار المغادرة..\n\nتم المغادرة من: {left} مجموعه.\nفشل المغادرة من: {failed} مجموعه."
             )
         await asyncio.sleep(0.7)
     await msg.delete()
     await client.send_message(
-        message.chat.id, f"✅ Left from: {left} chats.\n❌ Failed in: {failed} chats."
+        message.chat.id, f"✅ تم المغادرة من: {left} مجموعه.\n❌ فشل المغادرة من: {failed} مجموعه."
     )
 
 
