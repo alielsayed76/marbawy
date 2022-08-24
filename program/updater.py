@@ -71,7 +71,7 @@ async def update_repo(_, message: Message):
 @Client.on_message(command(["ريستارت", f"restart@{BOT_USERNAME}"]) & ~filters.edited)
 @sudo_users_only
 async def restart_bot(_, message: Message):
-    msg = await message.reply("`restarting bot...`")
+    msg = await message.reply("`جار اعادة التشغيل...`")
     args = [sys.executable, "main.py"]
     await msg.edit("✅ تم اعادة تشغيل البوت\n\n• دلوقتي تقدر تستخدمه تاني.")
     execle(sys.executable, *args, environ)
