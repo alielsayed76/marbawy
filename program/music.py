@@ -52,7 +52,7 @@ async def play(c: Client, m: Message):
                     InlineKeyboardButton(text="•السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
                 ],
                 [
-                    InlineKeyboardButton(text="• علي", url=f"https://t.me/EL_RAYEQ1"),
+                    InlineKeyboardButton(text="• علي", url=f"https://t.me/G5_7C"),
                     InlineKeyboardButton(text="•حسن", url=f"https://t.me/Dev_Arbawy"),
                 ],
                   [
