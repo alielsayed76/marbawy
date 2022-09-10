@@ -82,7 +82,7 @@ async def skip(c: Client, m: Message):
 
 
 @Client.on_message(
-    command(["/stop", f"/stop@{BOT_USERNAME}", "/end", f"نهاء", "انهاء"])
+    command(["/stop", f"/stop@{BOT_USERNAME}", "/end", f"ايقاف", "انهاء"])
     & other_filters
 )
 @authorized_users_only
@@ -100,7 +100,7 @@ async def stop(client, m: Message):
 
 
 @Client.on_message(
-    command(["ايقاف", f"/pause@{BOT_USERNAME}", "vpause"]) & other_filters
+    command(["وقف", f"/pause@{BOT_USERNAME}", "vpause"]) & other_filters
 )
 @authorized_users_only
 async def pause(client, m: Message):
@@ -127,7 +127,7 @@ async def resume(client, m: Message):
         try:
             await call_py.resume_stream(chat_id)
             await m.reply(
-                "▶️ **تم استئناف المسار**\n\n• **لايقاف البث موقتآ استخدم**\n» `ايقاف`"
+                "▶️ **تم استئناف المسار**\n\n• **لايقاف البث موقتآ استخدم**\n» `وقف`"
             )
         except Exception as e:
             await m.reply(f"🚫 **خطأ :**\n\n`{e}`")
