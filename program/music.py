@@ -83,8 +83,8 @@ async def play(c: Client, m: Message):
         if not a.can_delete_messages:
         await m.reply_text(
             "بحاجه الي صلاحية حذف الرسائل"
-        )
-        return
+            )
+            return
         if not a.can_invite_users:
             await m.reply_text("أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِ:" + "\n\n» ❌__إضافة مستخدمين__")
             return
