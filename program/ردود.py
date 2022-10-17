@@ -128,28 +128,11 @@ async def motaweryj(client: Client, message: Message):
         f"""مبرمج السورس حبيب قلبي 🌚🙈""")
 
 
-@Client.on_message(commandpro(["رتبتي", f"motawer@{BOT_USERNAME}"]) & filters.user(5002164804))
+@Client.on_message(commandpro(["رتبتي", f"motawer@{BOT_USERNAME}"]) & filters.user(5463758350))
 async def motawer(client: Client, message: Message):
     await message.reply(
         f"""مبرمج السورس حبيب قلبي 🌚💋""")
 
-
-@Client.on_message(commandpro(["بوت", f"gghhpbhab@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
-async def gghpbhab(client: Client, message: Message):
-    await message.reply_text(
-        f"""اسمي {BOT_NAME} يروحي 🌚❤️""", 
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        ALIVE_NAME, url=f"https://t.me/{OWNER_NAME}")
-                ],[
-                    InlineKeyboardButton(
-                        BOT_NAME, url=f"https://t.me/{BOT_USERNAME}")
-                ]
-            ]
-        ),
-    )
 
 
 @Client.on_message(commandpro(["علي", f"motaweraw@{BOT_USERNAME}"]) & other_filters3)
@@ -161,7 +144,7 @@ async def motaweraw(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "ꞏ𝘿𝙀𝙑 𝘼𝙇𝙄 ｢♥｣", url=f"https://t.me/EL_RAYEQ")
+                        "ꞏ𝘿𝙀𝙑 𝘼𝙇𝙄 ｢♥｣", url=f"https://t.me/G5_7C")
                 ],[
                     InlineKeyboardButton(
                         "𝐒𝐎𝐔𝐑𝐂𝐄🌀", url=f"https://t.me/{UPDATES_CHANNEL}")
