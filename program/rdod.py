@@ -4,13 +4,13 @@ import time
 import pyrogram
 from cache.admins import admins
 from pyrogram import Client, filters
-from config import IMG_3, UPDATES_CHANNEL, OWNER_NAME, SUDO_USERS, BOT_USERNAME, ALIVE_NAME, BOT_NAME
-from driver.filters import command, other_filters, commandpro, other_filters3
+from config import IMG_3, UPDATES_CHANNEL, OWNER_NAME, SUDO_USERS, BOT_USERNAME, ALIVE_NAME
+from driver.filters import command, other_filters, other_filters2
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 
 
-@Client.on_message(commandpro(["الإعدادات", "الاعدادات", "اعدادات", "مم", f"nftb@{BOT_USERNAME}"]) & other_filters3)
+@Client.on_message(command(["الإعدادات", "الاعدادات", "اعدادات", "مم", f"nftb@{BOT_USERNAME}"]) & other_filters3)
 async def nftb(client: Client, message: Message):
     await message.reply(f"""🌀 ها هي اوامر الاغاني :
 ━━━━━━━━━━━━
@@ -51,7 +51,7 @@ async def nftb(client: Client, message: Message):
     )
     
     
-@Client.on_message(command(["ايدي", f"ids@{BOT_USERNAME}"]) & other_filters3)
+@Client.on_message(command(["ايدي", f"ids@{BOT_USERNAME}", "/id"]) & other_filters3)
 def ids(client: Client, message: Message):
     ali = message.reply_to_message
     if ali:
@@ -122,20 +122,20 @@ async def motawerf(client: Client, message: Message):
     )
 
 
-@Client.on_message(commandpro(["رتبتي", f"motaweryj@{BOT_USERNAME}"]) & filters.user(5369052737))
+@Client.on_message(command(["رتبتي", f"motaweryj@{BOT_USERNAME}"]) & filters.user(5369052737))
 async def motaweryj(client: Client, message: Message):
     await message.reply(
         f"""مبرمج السورس حبيب قلبي 🌚🙈""")
 
 
-@Client.on_message(commandpro(["رتبتي", f"motawer@{BOT_USERNAME}"]) & filters.user(5463758350))
+@Client.on_message(command(["رتبتي", f"motawer@{BOT_USERNAME}"]) & filters.user(5463758350))
 async def motawer(client: Client, message: Message):
     await message.reply(
         f"""مبرمج السورس حبيب قلبي 🌚💋""")
 
 
 
-@Client.on_message(commandpro(["علي", f"motaweraw@{BOT_USERNAME}"]) & other_filters3)
+@Client.on_message(command(["علي", f"motaweraw@{BOT_USERNAME}"]) & other_filters3)
 async def motaweraw(client: Client, message: Message):
     await message.reply_photo(
         photo = "https://telegra.ph/file/f7a8e5469df132cf1d5c1.jpg",
@@ -153,7 +153,7 @@ async def motaweraw(client: Client, message: Message):
     ))
                 
                 
-@Client.on_message(commandpro(["حسن", f"motawerat@{BOT_USERNAME}"]) & other_filters3)
+@Client.on_message(command(["حسن", f"motawerat@{BOT_USERNAME}"]) & other_filters3)
 async def motawerat(client: Client, message: Message):
     await message.reply_photo(
         photo = "https://telegra.ph/file/7dd0f2755c4bb2ed05b15.jpg",
@@ -183,7 +183,7 @@ async def nftbsta(client: Client, message: Message):
         f"""فرح خالتك قريب 😹❤️""")
     
     
-@Client.on_message(commandpro(["مين", f"meen@{BOT_USERNAME}"]) & other_filters3)
+@Client.on_message(command(["مين", f"meen@{BOT_USERNAME}"]) & other_filters3)
 async def meen(client: Client, message: Message):
     await message.reply(
         f"""انا بوت وبحبك 🥺❤️""")
