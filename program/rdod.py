@@ -5,12 +5,12 @@ import pyrogram
 from cache.admins import admins
 from pyrogram import Client, filters
 from config import IMG_3, UPDATES_CHANNEL, OWNER_NAME, SUDO_USERS, BOT_USERNAME, ALIVE_NAME
-from driver.filters import command, other_filters, other_filters2
+from driver.filters import command, other_filters, other_filters3
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 
 
-@Client.on_message(command(["الإعدادات", "الاعدادات", "اعدادات", "مم", f"nftb@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["الإعدادات", "الاعدادات", "اعدادات", "مم", f"nftb@{BOT_USERNAME}"]) & other_filters3)
 async def nftb(client: Client, message: Message):
     await message.reply(f"""🌀 ها هي اوامر الاغاني :
 ━━━━━━━━━━━━
@@ -51,7 +51,7 @@ async def nftb(client: Client, message: Message):
     )
     
     
-@Client.on_message(command(["ايدي", f"ids@{BOT_USERNAME}", "/id"]) & other_filters2)
+@Client.on_message(command(["ايدي", f"ids@{BOT_USERNAME}", "/id"]) & other_filters3)
 def ids(client: Client, message: Message):
     ali = message.reply_to_message
     if ali:
@@ -63,19 +63,19 @@ def ids(client: Client, message: Message):
         )
 
 
-@Client.on_message(command([".", f"vgdg@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command([".", f"vgdg@{BOT_USERNAME}"]) & other_filters3)
 async def vgdg(client: Client, message: Message):
     await message.reply(
         f""" صلي علي الحبيب ❤️ """
         )
 
 
-@Client.on_message(command(["رجلي", f"nftbs@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["رجلي", f"nftbs@{BOT_USERNAME}"]) & other_filters3)
 async def nftbs(client: Client, message: Message):
         await message.reply(f"""تتشل يبعيد 😹😹 """)
 
     
-@Client.on_message(command(["انا مين", f"gghpb@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["انا مين", f"gghpb@{BOT_USERNAME}"]) & other_filters3)
 async def gghpb(client: Client, message: Message):
     await message.reply_text(
         f"""💘 ¦ انت روحي » """, 
@@ -90,20 +90,20 @@ async def gghpb(client: Client, message: Message):
     )
     
     
-@Client.on_message(command(["بحبك", "حبق", "حبكك", "بحبق", "حبقق", "بحبكك", f"nftbsa@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["بحبك", "حبق", "حبكك", "بحبق", "حبقق", "بحبكك", f"nftbsa@{BOT_USERNAME}"]) & other_filters3)
 async def nftbsa(client: Client, message: Message):
     await message.reply(
         f"""{message.from_user.mention()}بموت فيك يروح قلبي 🥺❤️
         """)
     
     
-@Client.on_message(command(["قول", f"echo@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["قول", f"echo@{BOT_USERNAME}"]) & other_filters3)
 def echo(client, msg):
     text = msg.text.split(None, 1)[1]
     msg.reply(text)
     
     
-@Client.on_message(command(["المطور", f"motawerf@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["المطور", f"motawerf@{BOT_USERNAME}"]) & other_filters3)
 async def motawerf(client: Client, message: Message):
     await message.reply(
         f"""❲ Developers Bot ❳
@@ -135,7 +135,7 @@ async def motawer(client: Client, message: Message):
 
 
 
-@Client.on_message(command(["علي", f"motaweraw@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["علي", f"motaweraw@{BOT_USERNAME}"]) & other_filters3)
 async def motaweraw(client: Client, message: Message):
     await message.reply_photo(
         photo = "https://telegra.ph/file/f7a8e5469df132cf1d5c1.jpg",
@@ -153,7 +153,7 @@ async def motaweraw(client: Client, message: Message):
     ))
                 
                 
-@Client.on_message(command(["حسن", f"motawerat@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["حسن", f"motawerat@{BOT_USERNAME}"]) & other_filters3)
 async def motawerat(client: Client, message: Message):
     await message.reply_photo(
         photo = "https://telegra.ph/file/7dd0f2755c4bb2ed05b15.jpg",
@@ -171,37 +171,37 @@ async def motawerat(client: Client, message: Message):
     ))
 
     
-@Client.on_message(command(["مين ضافني", f"nftbst@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["مين ضافني", f"nftbst@{BOT_USERNAME}"]) & other_filters3)
 async def nftbst(client: Client, message: Message):
     await message.reply(
         f"""انت دخلت بالرابط متعملش نفسك غبي 😒""")
     
     
-@Client.on_message(command(["طيب", f"nftbsta@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["طيب", f"nftbsta@{BOT_USERNAME}"]) & other_filters3)
 async def nftbsta(client: Client, message: Message):
     await message.reply(
         f"""فرح خالتك قريب 😹❤️""")
     
     
-@Client.on_message(command(["مين", f"meen@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["مين", f"meen@{BOT_USERNAME}"]) & other_filters3)
 async def meen(client: Client, message: Message):
     await message.reply(
         f"""انا بوت وبحبك 🥺❤️""")
 
     
-@Client.on_message(command(["كداب", f"kdab@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["كداب", f"kdab@{BOT_USERNAME}"]) & other_filters3)
 async def kdab(client: Client, message: Message):
     await message.reply(
         f"""انت اللى كدااب يحليتها ❤️😹""")
 
 
-@Client.on_message(command(["غور", f"ghour@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["غور", f"ghour@{BOT_USERNAME}"]) & other_filters3)
 async def ghour(client: Client, message: Message):
     await message.reply(
         f"""مش هغور غور انت 😒""")
 
 
-@Client.on_message(command(["غوري", f"ghoure@{BOT_USERNAME}"]) & other_filters2)
+@Client.on_message(command(["غوري", f"ghoure@{BOT_USERNAME}"]) & other_filters3)
 async def ghoure(client: Client, message: Message):
     await message.reply(
         f"""مش هغور غور انت 😒""")
