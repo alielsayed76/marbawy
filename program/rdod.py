@@ -65,10 +65,16 @@ def ids(client: Client, message: Message):
 
 @Client.on_message(command([".", f"vgdg@{BOT_USERNAME}"]) & other_filters3)
 async def vgdg(client: Client, message: Message):
-    await message.reply(
+    if len(message.command) > 2:
+        return
+    try:
+        await message.reply(
         f""" صلي علي الحبيب ❤️ """
         )
 
+        
+        
+        
 
 @Client.on_message(command(["رجلي", f"nftbs@{BOT_USERNAME}"]) & other_filters3)
 async def nftbs(client: Client, message: Message):
