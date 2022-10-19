@@ -4,7 +4,7 @@ import time
 import pyrogram
 from cache.admins import admins
 from pyrogram import Client, filters
-from config import IMG_3, UPDATES_CHANNEL, OWNER_NAME, SUDO_USERS, BOT_USERNAME, ALIVE_NAME
+from config import IMG_3, UPDATES_CHANNEL, OWNER_NAME, SUDO_USERS, BOT_USERNAME, ALIVE_NAME, DEV_NAME
 from driver.filters import command, other_filters, other_filters3
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
@@ -108,12 +108,12 @@ async def motawerf(client: Client, message: Message):
     await message.reply(
         f"""❲ Developers Bot ❳
 — — — — — — — — —
- 𖥔Dev Name :  {ALIVE_NAME}""",
+ 𖥔Dev Name :  {DEV_NAME}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        ALIVE_NAME, url=f"https://t.me/{OWNER_NAME}")
+                        DEV_NAME, url=f"https://t.me/{OWNER_NAME}")
                 ],
                 [InlineKeyboardButton("🎧اضافه البوت اللي مجموعتك🎧", url=f"http://t.me/{BOT_USERNAME}?startgroup=new"),              
                 ]
