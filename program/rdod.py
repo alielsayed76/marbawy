@@ -134,42 +134,6 @@ async def motawer(client: Client, message: Message):
         f"""مبرمج السورس حبيب قلبي 🌚💋""")
 
 
-
-@Client.on_message(command(["علي", f"motaweraw@{BOT_USERNAME}"]) & other_filters3)
-async def motaweraw(client: Client, message: Message):
-    await message.reply_photo(
-        photo = "https://telegra.ph/file/f7a8e5469df132cf1d5c1.jpg",
-       caption =f"""مبرمج السورس حبيب قلبي 🌚💋""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "ꞏ𝘿𝙀𝙑 𝘼𝙇𝙄 ｢♥｣", url=f"https://t.me/G5_7C")
-                ],[
-                    InlineKeyboardButton(
-                        "𝐒𝐎𝐔𝐑𝐂𝐄🌀", url=f"https://t.me/{UPDATES_CHANNEL}")
-                ]
-            ]
-    ))
-                
-                
-@Client.on_message(command(["حسن", f"motawerat@{BOT_USERNAME}"]) & other_filters3)
-async def motawerat(client: Client, message: Message):
-    await message.reply_photo(
-        photo = "https://telegra.ph/file/7dd0f2755c4bb2ed05b15.jpg",
-        caption =f"""مبرمج السورس حبيب قلبي 🌚🙈""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "ꞏ𝘿𝙀𝙑 𝘼𝙍𝘽𝘼𝙒𝙔 ｢♥｣", url=f"https://t.me/Dev_Arbawy")
-                ],[
-                    InlineKeyboardButton(
-                        "𝐒𝐎𝐔𝐑𝐂𝐄🌀", url=f"https://t.me/{UPDATES_CHANNEL}")
-                ]
-            ]
-    ))
-
     
 @Client.on_message(command(["مين ضافني", f"nftbst@{BOT_USERNAME}"]) & other_filters3)
 async def nftbst(client: Client, message: Message):
