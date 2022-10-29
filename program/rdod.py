@@ -10,7 +10,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 
 
-@Client.on_message(command(["الإعدادات", "الاعدادات", "اعدادات", "مم", f"nftb@{BOT_USERNAME}"]) & other_filters3)
+@Client.on_message(command(["الإعدادات", "الاعدادات", "اعدادات", f"nftb@{BOT_USERNAME}"]) & other_filters3)
 async def nftb(client: Client, message: Message):
     await message.reply(f"""🌀 ها هي اوامر الاغاني :
 ━━━━━━━━━━━━
